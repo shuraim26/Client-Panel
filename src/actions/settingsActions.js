@@ -5,10 +5,13 @@ import {
 } from "./types";
 
 export const setDisableBalanceOnAdd = () => {
+  // Get settings from localStorage
   const settings = JSON.parse(localStorage.getItem("settings"));
 
+  // Toggle
   settings.disableBalanceOnAdd = !settings.disableBalanceOnAdd;
 
+  // Set back to localStorage
   localStorage.setItem("settings", JSON.stringify(settings));
 
   return {
@@ -18,10 +21,13 @@ export const setDisableBalanceOnAdd = () => {
 };
 
 export const setDisableBalanceOnEdit = () => {
+  // Get settings from localStorage
   const settings = JSON.parse(localStorage.getItem("settings"));
 
+  // Toggle
   settings.disableBalanceOnEdit = !settings.disableBalanceOnEdit;
 
+  // Set back to localStorage
   localStorage.setItem("settings", JSON.stringify(settings));
 
   return {
@@ -31,12 +37,14 @@ export const setDisableBalanceOnEdit = () => {
 };
 
 export const setAllowRegistration = () => {
+  // Get settings from localStorage
   const settings = JSON.parse(localStorage.getItem("settings"));
 
+  // Toggle
   settings.allowRegistration = !settings.allowRegistration;
 
+  // Set back to localStorage
   localStorage.setItem("settings", JSON.stringify(settings));
-
   return {
     type: ALLOW_REGISTRATION,
     payload: settings.allowRegistration

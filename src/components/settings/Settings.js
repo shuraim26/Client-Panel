@@ -11,19 +11,16 @@ import {
 class Settings extends Component {
   disableBalanceOnAddChange = () => {
     const { setDisableBalanceOnAdd } = this.props;
-
     setDisableBalanceOnAdd();
   };
 
   disableBalanceOnEditChange = () => {
     const { setDisableBalanceOnEdit } = this.props;
-
     setDisableBalanceOnEdit();
   };
 
   allowRegistrationChange = () => {
     const { setAllowRegistration } = this.props;
-
     setAllowRegistration();
   };
 
@@ -37,10 +34,13 @@ class Settings extends Component {
     return (
       <div>
         <div className="row">
-          <Link to="/" className="btn btn-link">
-            <i className="fa fa-arrow-circle-left" /> Back to Dashboard
-          </Link>
+          <div className="col-md-6">
+            <Link to="/" className="btn btn-link">
+              <i className="fas fa-arrow-circle-left" /> Back To Dashboard
+            </Link>
+          </div>
         </div>
+
         <div className="card">
           <div className="card-header">Edit Settings</div>
           <div className="card-body">
@@ -54,8 +54,9 @@ class Settings extends Component {
                   onChange={this.allowRegistrationChange}
                 />
               </div>
+
               <div className="form-group">
-                <label>Disable Balance on Add</label>{" "}
+                <label>Disable Balance On Add</label>{" "}
                 <input
                   type="checkbox"
                   name="disableBalanceOnAdd"
@@ -63,8 +64,9 @@ class Settings extends Component {
                   onChange={this.disableBalanceOnAddChange}
                 />
               </div>
+
               <div className="form-group">
-                <label>Disable Balance on Edit</label>{" "}
+                <label>Disable Balance On Edit</label>{" "}
                 <input
                   type="checkbox"
                   name="disableBalanceOnEdit"
